@@ -1,0 +1,24 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "luckyore:lucky_diamond_ore",
+      "luckyore:lucky_emerald_ore",
+      "luckyore:lucky_lapis_ore",
+      "luckyore:lucky_redstone_ore",
+      "luckyore:nether_lucky_ore"
+    ]
+  },
+  "criteria": {
+    "has_lucky": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "luckyore:lucky_dust"
+          }
+        ]
+      }
+    }
+  }
+}
