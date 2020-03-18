@@ -5,7 +5,7 @@
     "1.0.1": "fixed a client crash"
   },
   "promos": {
-    "1.15-latest": "1.0.1",
-    "1.15-recommended": "1.0.1"
+    "1.15.2-latest": "1.0.1",
+    "1.15.2-recommended": "1.0.1"
   }
 }
