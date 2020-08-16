@@ -1,40 +1,59 @@
 {
-  "minecraft:recipes/tools/flint_and_steel": {
+  "minecraft:recipes/transportation/acacia_boat": {
     "criteria": {
-      "has_obsidian": "2020-03-17 16:52:30 +0100"
+      "in_water": "2020-08-16 07:50:29 +0200"
     },
     "done": true
   },
-  "minecraft:nether/root": {
+  "minecraft:recipes/transportation/oak_boat": {
     "criteria": {
-      "entered_nether": "2020-03-17 16:52:49 +0100"
+      "in_water": "2020-08-16 07:50:29 +0200"
     },
     "done": true
   },
-  "minecraft:story/form_obsidian": {
+  "minecraft:story/lava_bucket": {
     "criteria": {
-      "obsidian": "2020-03-17 16:52:30 +0100"
+      "lava_bucket": "2020-08-16 07:49:37 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/decorations/enchanting_table": {
+  "netherelytra:recipes/netherite_membrane": {
     "criteria": {
-      "has_obsidian": "2020-03-17 16:52:30 +0100"
+      "has_elytra": "2020-08-16 07:49:14 +0200"
     },
     "done": true
   },
-  "minecraft:story/enter_the_nether": {
+  "minecraft:recipes/transportation/dark_oak_boat": {
     "criteria": {
-      "entered_nether": "2020-03-17 16:52:49 +0100"
+      "in_water": "2020-08-16 07:50:29 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2020-08-16 07:50:29 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2020-08-16 07:50:29 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2020-08-16 07:50:29 +0200"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:taiga": "2020-03-17 16:52:17 +0100",
-      "minecraft:dark_forest": "2020-03-17 16:59:51 +0100"
+      "minecraft:taiga": "2020-08-16 07:50:28 +0200",
+      "minecraft:river": "2020-08-16 07:50:29 +0200",
+      "minecraft:plains": "2020-08-16 07:48:53 +0200"
     },
     "done": false
   },
-  "DataVersion": 2230
+  "DataVersion": 2578
 }
