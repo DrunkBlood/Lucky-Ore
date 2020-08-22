@@ -1,6 +1,10 @@
 {
     "type": "minecraft:crafting_shaped",
-    "pattern":
+    "conditions": [{
+		"type": "luckyore:enabled_by_cfg",
+		"enabled_by_cfg": "lucky_diamond_ore"
+	}],
+	"pattern":
     [
         " x ",
         "xax",

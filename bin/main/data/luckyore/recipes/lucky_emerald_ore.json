@@ -1,5 +1,9 @@
 {
     "type": "minecraft:crafting_shaped",
+    "conditions": [{
+		"type": "luckyore:enabled_by_cfg",
+		"enabled_by_cfg": "lucky_emerald_ore"
+	}],
     "pattern":
     [
         " x ",

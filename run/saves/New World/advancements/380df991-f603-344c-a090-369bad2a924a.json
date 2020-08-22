@@ -1,4 +1,108 @@
 {
+  "minecraft:recipes/redstone/lectern": {
+    "criteria": {
+      "has_book": "2020-08-21 22:18:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2020-08-16 07:50:29 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bookshelf": {
+    "criteria": {
+      "has_book": "2020-08-21 22:18:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/writable_book": {
+    "criteria": {
+      "has_book": "2020-08-21 22:18:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/ol_betsy": {
+    "criteria": {
+      "shot_crossbow": "2020-08-21 23:08:53 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2020-08-21 22:16:31 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:taiga": "2020-08-16 07:50:28 +0200",
+      "minecraft:river": "2020-08-16 07:50:29 +0200",
+      "minecraft:plains": "2020-08-16 07:48:53 +0200"
+    },
+    "done": false
+  },
+  "minecraft:recipes/misc/book": {
+    "criteria": {
+      "has_paper": "2020-08-21 22:18:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/lava_bucket": {
+    "criteria": {
+      "lava_bucket": "2020-08-16 07:49:37 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/composter": {
+    "criteria": {
+      "has_wood_slab": "2020-08-21 22:20:46 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/map": {
+    "criteria": {
+      "has_compass": "2020-08-21 22:21:11 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2020-08-16 07:50:29 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2020-08-21 22:21:10 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cartography_table": {
+    "criteria": {
+      "has_paper": "2020-08-21 22:18:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/diamond_from_blasting": {
+    "criteria": {
+      "has_diamond_ore": "2020-08-22 12:07:16 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_wood_slab": "2020-08-21 22:20:46 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2020-08-22 12:07:45 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/acacia_boat": {
     "criteria": {
       "in_water": "2020-08-16 07:50:29 +0200"
@@ -11,27 +115,21 @@
     },
     "done": true
   },
-  "minecraft:story/lava_bucket": {
+  "minecraft:recipes/redstone/redstone_from_smelting": {
     "criteria": {
-      "lava_bucket": "2020-08-16 07:49:37 +0200"
+      "has_redstone_ore": "2020-08-22 12:07:17 +0200"
     },
     "done": true
   },
-  "netherelytra:recipes/netherite_membrane": {
+  "minecraft:recipes/redstone/redstone_from_blasting": {
     "criteria": {
-      "has_elytra": "2020-08-16 07:49:14 +0200"
+      "has_redstone_ore": "2020-08-22 12:07:17 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/dark_oak_boat": {
+  "luckyore:recipes/lucky_dust": {
     "criteria": {
-      "in_water": "2020-08-16 07:50:29 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/birch_boat": {
-    "criteria": {
-      "in_water": "2020-08-16 07:50:29 +0200"
+      "has_lucky": "2020-08-22 12:07:28 +0200"
     },
     "done": true
   },
@@ -41,19 +139,29 @@
     },
     "done": true
   },
+  "minecraft:recipes/misc/red_dye_from_tulip": {
+    "criteria": {
+      "has_red_flower": "2020-08-21 22:46:01 +0200"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/spruce_boat": {
     "criteria": {
       "in_water": "2020-08-16 07:50:29 +0200"
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
+  "minecraft:adventure/shoot_arrow": {
     "criteria": {
-      "minecraft:taiga": "2020-08-16 07:50:28 +0200",
-      "minecraft:river": "2020-08-16 07:50:29 +0200",
-      "minecraft:plains": "2020-08-16 07:48:53 +0200"
+      "shot_arrow": "2020-08-21 23:08:54 +0200"
     },
-    "done": false
+    "done": true
+  },
+  "minecraft:recipes/misc/diamond_from_smelting": {
+    "criteria": {
+      "has_diamond_ore": "2020-08-22 12:07:16 +0200"
+    },
+    "done": true
   },
   "DataVersion": 2578
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import drunkblood.luckyore.LuckyOre;
-import drunkblood.luckyore.LuckyOre.ModEnchantments;
+import drunkblood.luckyore.registries.ModEnchantments;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -58,7 +58,8 @@ public class BlockNetherLuckyOre extends Block{
 	                if (enchantmentID.contentEquals(String.valueOf((Object)Enchantments.SILK_TOUCH.getRegistryName()))) {
 	                	silk = true;
 	                }
-	                if (enchantmentID.equals(String.valueOf((Object)ModEnchantments.ench_lucky.getRegistryName()))) {
+					if (enchantmentID.equals(
+							String.valueOf((Object) ModEnchantments.LUCKY.get().getRegistryName()))) {
 	                	lucky = true;
 	                }
 	            }

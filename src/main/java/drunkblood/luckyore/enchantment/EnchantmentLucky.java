@@ -1,5 +1,6 @@
 package drunkblood.luckyore.enchantment;
 
+import drunkblood.luckyore.config.LuckyOreConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantments;
@@ -19,15 +20,26 @@ public class EnchantmentLucky extends Enchantment{
 	   return this.getMinEnchantability(enchantmentLevel) + 50;
 	}
 	@Override
-	public boolean isTreasureEnchantment() {
-	   return true;
-	}
-	@Override
-	public int getMaxLevel() {
-	   return 1;
-	}
-	@Override
 	public boolean canApplyTogether(Enchantment ench) {
 	   return super.canApplyTogether(ench) && ench != Enchantments.SILK_TOUCH;
+	}
+
+//	@Override
+//	public boolean canApply(ItemStack stack) {
+//		Item item = stack.getItem();
+//		if (item instanceof ToolItem || item instanceof BookItem) {
+//			return true;
+//		}
+//		return false;
+//	}
+
+	@Override
+	public boolean isTreasureEnchantment() {
+		return true;
+	}
+
+	@Override
+	public boolean isAllowedOnBooks() {
+		return LuckyOreConfig.lucky_enchantment_enabled;
 	}
 }
