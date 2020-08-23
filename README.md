@@ -1,4 +1,4 @@
-#Lucky-Ore
+# Lucky-Ore
 
 This Minecraft mod adds more ways to gain resources
 
