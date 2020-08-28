@@ -5,10 +5,15 @@
     "1.0.1": "fixed a client crash",
     "1.1.1": "added Mod Config",
     "1.2.1": "removed broken Mod Config",
-    "1.2.1": "bugfix Ore Drops and Lucky Enchantment"
+    "1.2.2": "bugfix Ore Drops and Lucky Enchantment"
+  },
+  "1.16.2":{
+    "1.0.0": "initial release"
   },
   "promos": {
     "1.15.2-latest": "1.1.1",
-    "1.15.2-recommended": "1.1.1"
+    "1.15.2-recommended": "1.1.1",
+    "1.16.2-latest": "1.0.0",
+    "1.16.2-recommended": "1.0.0"
   }
 }

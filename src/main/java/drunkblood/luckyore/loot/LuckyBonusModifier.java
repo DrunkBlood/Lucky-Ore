@@ -7,24 +7,22 @@ import javax.annotation.Nonnull;
 
 import com.google.gson.JsonObject;
 
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
+import drunkblood.luckyore.config.LuckyOreConfig;
+import drunkblood.luckyore.registries.ModBlocks;
+import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootContext;
 import net.minecraft.loot.LootParameters;
 import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 
 public class LuckyBonusModifier extends LootModifier {
 
-	private int increasedDrops;
 
-	protected LuckyBonusModifier(ILootCondition[] conditionsIn, int increasedDrops) {
+	protected LuckyBonusModifier(ILootCondition[] conditionsIn) {
 		super(conditionsIn);
-		this.increasedDrops = increasedDrops;
 	}
 
 	@Nonnull
@@ -32,14 +30,31 @@ public class LuckyBonusModifier extends LootModifier {
 	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
 		ItemStack tool = context.get(LootParameters.TOOL);
 		Random random = context.getRandom();
+		int increasedDrops = LuckyOreConfig.general_increased_drops;
 		if (tool != null) {
-			int fortuneLvl = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, tool);
-			for (ItemStack stack : generatedLoot) {
-				int roll1 = increasedDrops + 3 + random.nextInt(5 + fortuneLvl * 2);
-				int roll2 = increasedDrops + 3 + random.nextInt(5 + fortuneLvl * 2);
-				roll1 = Math.max(roll1, roll2);
-				stack.setCount(roll1);
+			BlockState state = context.get(LootParameters.BLOCK_STATE);
+			if (state != null) {
+				if (ModBlocks.LUCKY_EMERALD_ORE.get().getDefaultState().equals(state)) {
+					increasedDrops += LuckyOreConfig.lucky_emerald_ore_increased_drops;
+				} else if (ModBlocks.LUCKY_LAPIS_ORE.get().getDefaultState().equals(state)) {
+					increasedDrops += LuckyOreConfig.lucky_lapis_ore_increased_drops;
+				} else if (ModBlocks.LUCKY_LAPIS_ORE.get().getDefaultState().equals(state)) {
+					increasedDrops += LuckyOreConfig.lucky_redstone_ore_increased_drops;
+				} else if (ModBlocks.LUCKY_DIAMOND_ORE.get().getDefaultState().equals(state)) {
+					increasedDrops += LuckyOreConfig.lucky_diamond_ore_increased_drops;
+				}
 			}
+			for (ItemStack stack : generatedLoot) {
+				int bonus = 0;
+				int cap = (int) (Math.log(increasedDrops * 4 + 1) / Math.log(2)) + 4;
+				for (int i = 0; i < cap; i++) {
+					if (random.nextFloat() < 0.75f) {
+						bonus++;
+					}
+				}
+				stack.setCount(stack.getCount() + increasedDrops + bonus);
+			}
+
 		}
 		return generatedLoot;
 	}
@@ -48,9 +63,7 @@ public class LuckyBonusModifier extends LootModifier {
 
 		@Override
 		public LuckyBonusModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
-			int increasedDrops = JSONUtils.getInt(object, "increasedDrops");
-
-			return new LuckyBonusModifier(conditionsIn, increasedDrops);
+			return new LuckyBonusModifier(conditionsIn);
 		}
 	}
 }

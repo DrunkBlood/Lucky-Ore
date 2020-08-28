@@ -3,12 +3,13 @@ package drunkblood.luckyore.events;
 import drunkblood.luckyore.LuckyOre;
 import drunkblood.luckyore.config.ConfigHolder;
 import drunkblood.luckyore.config.LuckyOreConfig;
+import drunkblood.luckyore.world.gen.ModOres;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod.EventBusSubscriber(modid = LuckyOre.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {
@@ -23,40 +24,33 @@ public class ModEventSubscriber {
 			LuckyOreConfig.lucky_lapis_ore_enabled = ConfigHolder.CLIENT.lucky_lapis_ore_enabled.get();
 			LuckyOreConfig.lucky_redstone_ore_enabled = ConfigHolder.CLIENT.lucky_redstone_ore_enabled.get();
 			LuckyOreConfig.nether_lucky_ore_enabled = ConfigHolder.CLIENT.nether_lucky_ore_enabled.get();
+			LuckyOreConfig.lucky_ore_vein_count = ConfigHolder.CLIENT.lucky_ore_vein_count.get();
+			LuckyOreConfig.lucky_ore_vein_size = ConfigHolder.CLIENT.lucky_ore_vein_size.get();
+			LuckyOreConfig.lucky_ore_min_y = ConfigHolder.CLIENT.lucky_ore_min_y.get();
+			LuckyOreConfig.lucky_ore_max_y = ConfigHolder.CLIENT.lucky_ore_max_y.get();
+			LuckyOreConfig.nether_lucky_ore_vein_count = ConfigHolder.CLIENT.nether_lucky_ore_vein_count.get();
+			LuckyOreConfig.nether_lucky_ore_vein_size = ConfigHolder.CLIENT.nether_lucky_ore_vein_size.get();
+			LuckyOreConfig.nether_lucky_ore_min_y = ConfigHolder.CLIENT.nether_lucky_ore_min_y.get();
+			LuckyOreConfig.lucky_emerald_ore_increased_drops = ConfigHolder.CLIENT.lucky_emerald_ore_increased_drops
+					.get();
+			LuckyOreConfig.lucky_lapis_ore_increased_drops = ConfigHolder.CLIENT.lucky_lapis_ore_increased_drops.get();
+			LuckyOreConfig.lucky_redstone_ore_increased_drops = ConfigHolder.CLIENT.lucky_redstone_ore_increased_drops
+					.get();
+			LuckyOreConfig.general_increased_drops = ConfigHolder.CLIENT.general_increased_drops.get();
+			LuckyOreConfig.lucky_diamond_ore_increased_drops = ConfigHolder.CLIENT.lucky_diamond_ore_increased_drops
+					.get();
+			LuckyOreConfig.zombie_dust_drop_chance = ConfigHolder.CLIENT.zombie_dust_drop_chance
+					.get();
+			LuckyOreConfig.zombie_dust_looting_multiplier = ConfigHolder.CLIENT.zombie_dust_looting_multiplier
+					.get();
 		} else if (configSpec == ConfigHolder.SERVER_SPEC) {
 			// Server config has changed || first loaded
 		}
 	}
 
 	@SubscribeEvent
-	public static void LoadComplete(FMLLoadCompleteEvent event) {
-		// adding Ores
-		return;
-		// TODO OreSpawn not yet implemented
-//		LuckyOre.LOGGER.debug("event fired");
-//		for (Biome biome : ForgeRegistries.BIOMES) {
-//			if (biome.getCategory() == Category.THEEND) {
-//				continue;
-//			}
-//			if (biome.getCategory() == Biome.Category.NETHER) {
-//				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-//						Feature.ORE
-//								.func_225566_b_(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
-//										ModBlocks.nether_lucky_ore.getDefaultState(), /* vein size */3))
-//								.func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(
-//										/* freq per chunk */35, /* miny */ 5, /* y-max-offset */0, /* maxy */256))));
-//				continue;
-//			}
-//			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-//					Feature.ORE
-//							.func_225566_b_(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-//									ModBlocks.lucky_ore.getDefaultState(), /* vein size */3))
-//							.func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(
-//									/* freq per chunk */25, /* miny */ 5, /* y-max-offset */0, /* maxy */128))));
-//
-//		}
-//		// add ApplyLuckyBonus function
-//		ApplyLuckyBonus.Serializer applyLuckyBonus = new ApplyLuckyBonus.Serializer();
-//		LootFunctionManager.registerFunction(applyLuckyBonus);
+	public static void CommonSetup(FMLCommonSetupEvent event) {
+		ModOres.initOres();
+		ModOres.setupOres();
 	}
 }

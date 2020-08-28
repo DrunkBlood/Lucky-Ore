@@ -70,9 +70,11 @@ public class BlockNetherLuckyOre extends Block{
 				while (amountConverted > 0 && !netherrackNearby.isEmpty()){
 					BlockPos replacePos = netherrackNearby.get(random.nextInt(netherrackNearby.size()));
 					netherrackNearby.remove(replacePos);
-					//int chosenBlock = random.nextInt(100) + 1;
-					if (true) {
+					int chosenBlock = random.nextInt(100) + 1;
+					if (chosenBlock > 30) {
 						worldIn.setBlockState(replacePos, Blocks.NETHER_QUARTZ_ORE.getDefaultState());
+					} else {
+						worldIn.setBlockState(replacePos, Blocks.field_235334_I_.getDefaultState());
 					}
 					amountConverted--;
 				}

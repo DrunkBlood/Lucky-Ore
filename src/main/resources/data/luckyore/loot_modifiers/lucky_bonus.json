@@ -15,8 +15,45 @@
       }
     },
     {
-      "condition": "block_state_property",
-      "block":"minecraft:wheat"
+      "condition": "minecraft:alternative",
+      "terms":[
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "minecraft:diamond_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "minecraft:emerald_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "minecraft:redstone_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "minecraft:lapis_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "minecraft:nether_gold_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "luckyore:lucky_diamond_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "luckyore:lucky_emerald_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "luckyore:lucky_lapis_ore"
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "luckyore:lucky_redstone_ore"
+        }
+      ]
     }
-  ]	
+  ]
 }

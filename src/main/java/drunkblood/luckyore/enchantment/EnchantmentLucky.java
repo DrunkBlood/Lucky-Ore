@@ -24,15 +24,6 @@ public class EnchantmentLucky extends Enchantment{
 	   return super.canApplyTogether(ench) && ench != Enchantments.SILK_TOUCH;
 	}
 
-//	@Override
-//	public boolean canApply(ItemStack stack) {
-//		Item item = stack.getItem();
-//		if (item instanceof ToolItem || item instanceof BookItem) {
-//			return true;
-//		}
-//		return false;
-//	}
-
 	@Override
 	public boolean isTreasureEnchantment() {
 		return true;
