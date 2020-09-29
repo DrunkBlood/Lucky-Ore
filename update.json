@@ -9,7 +9,7 @@
   },
   "1.16.2":{
     "1.0.0": "initial release",
-    "1.0.1": "config bugfixes. Fixen nether crash"
+    "1.0.1": "config bugfixes. Fixed nether crash"
   },
   "1.16.3": {
     "1.0.0": "initial release"
