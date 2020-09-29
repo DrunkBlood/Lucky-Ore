@@ -16,6 +16,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 
+import javax.annotation.Nonnull;
+
 public class ZombieDustModifier extends LootModifier {
 
 	protected ZombieDustModifier(ILootCondition[] conditionsIn) {
@@ -23,6 +25,7 @@ public class ZombieDustModifier extends LootModifier {
 	}
 
 	@Override
+	@Nonnull
 	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
 		/*
 		 * "condition": "minecraft:random_chance_with_looting", "chance": 0.025,
@@ -33,7 +36,7 @@ public class ZombieDustModifier extends LootModifier {
 		 * this.lootingMultiplier;
 		 */
 		Entity entity = context.get(LootParameters.THIS_ENTITY);
-		if (entity != null && entity instanceof ZombieEntity) {
+		if (entity instanceof ZombieEntity) {
 			int i = context.getLootingModifier();
 			if (context.getRandom().nextFloat() < LuckyOreConfig.zombie_dust_drop_chance
 					+ (float) i * LuckyOreConfig.zombie_dust_looting_multiplier) {
@@ -51,6 +54,11 @@ public class ZombieDustModifier extends LootModifier {
 		@Override
 		public ZombieDustModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
 			return new ZombieDustModifier(conditionsIn);
+		}
+
+		@Override
+		public JsonObject write(ZombieDustModifier instance) {
+			return makeConditions(instance.conditions);
 		}
 	}
 

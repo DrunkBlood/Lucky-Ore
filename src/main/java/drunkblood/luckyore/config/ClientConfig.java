@@ -24,8 +24,8 @@ public class ClientConfig {
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_redstone_ore_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> general_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_diamond_ore_increased_drops;
-	public final ForgeConfigSpec.ConfigValue<Float> zombie_dust_drop_chance;
-	public final ForgeConfigSpec.ConfigValue<Float> zombie_dust_looting_multiplier;
+	public final ForgeConfigSpec.ConfigValue<Double> zombie_dust_drop_chance;
+	public final ForgeConfigSpec.ConfigValue<Double> zombie_dust_looting_multiplier;
 
 	ClientConfig(final ForgeConfigSpec.Builder builder) {
 		builder.push("general");
@@ -40,10 +40,10 @@ public class ClientConfig {
 		nether_lucky_ore_enabled = builder.comment("Nether Lucky Ore is obtainable/enabled")
 				.translation(LuckyOre.MODID + "config.lucky_diamond_ore").define("lucky_diamond_ore", true);
 		zombie_dust_drop_chance = builder.comment("Chances for Rare Zombie Drops - see vanilla zombie.json loottable")
-				.translation(LuckyOre.MODID + "config.zombie_dust_drop_chance").define("dust_drop_chance", 0.025f);
-		zombie_dust_looting_multiplier = builder.comment("Lucky Dust drops with that chance from a zombie")
+				.translation(LuckyOre.MODID + "config.zombie_dust_drop_chance").define("dust_drop_chance", 0.025);
+		zombie_dust_looting_multiplier = builder.comment("How far does looting affect the dust drop chances")
 				.translation(LuckyOre.MODID + "config.zombie_dust_looting_multiplier")
-				.define("dust_drop_chance", 0.01f);
+				.define("dust_looting_multiplier", 0.01);
 		builder.push("lucky_enchantment");
 		lucky_enchantment_enabled = builder.comment("The Lucky Enchantment is obtainable/enabled")
 				.translation(LuckyOre.MODID + "config.lucky_enchantment").define("lucky_enchantment", true);
@@ -70,7 +70,7 @@ public class ClientConfig {
 				.translation(LuckyOre.MODID + "config.lucky_ore_gen").define("vein_count", 35);
 		nether_lucky_ore_vein_size = builder.define("vein_size", 3);
 		nether_lucky_ore_min_y = builder.define("min_y", 5);
-		nether_lucky_ore_max_y = builder.define("max_y", 256);
+		nether_lucky_ore_max_y = builder.comment("Warning the game will crash if the valuye is over 128. Vanilla can not generate Ores above 128").define("max_y", 128);
 
 	}
 }

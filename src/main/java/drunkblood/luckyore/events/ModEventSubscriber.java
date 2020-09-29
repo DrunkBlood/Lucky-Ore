@@ -39,10 +39,10 @@ public class ModEventSubscriber {
 			LuckyOreConfig.general_increased_drops = ConfigHolder.CLIENT.general_increased_drops.get();
 			LuckyOreConfig.lucky_diamond_ore_increased_drops = ConfigHolder.CLIENT.lucky_diamond_ore_increased_drops
 					.get();
-			LuckyOreConfig.zombie_dust_drop_chance = ConfigHolder.CLIENT.zombie_dust_drop_chance
-					.get();
-			LuckyOreConfig.zombie_dust_looting_multiplier = ConfigHolder.CLIENT.zombie_dust_looting_multiplier
-					.get();
+			LuckyOreConfig.zombie_dust_drop_chance = new Double(ConfigHolder.CLIENT.zombie_dust_drop_chance
+					.get()).floatValue();
+			LuckyOreConfig.zombie_dust_looting_multiplier = new Double(ConfigHolder.CLIENT.zombie_dust_looting_multiplier
+					.get()).floatValue();
 		} else if (configSpec == ConfigHolder.SERVER_SPEC) {
 			// Server config has changed || first loaded
 		}
@@ -50,6 +50,7 @@ public class ModEventSubscriber {
 
 	@SubscribeEvent
 	public static void CommonSetup(FMLCommonSetupEvent event) {
+		LuckyOreConfig.nether_lucky_ore_max_y = 128;
 		ModOres.initOres();
 		ModOres.setupOres();
 	}

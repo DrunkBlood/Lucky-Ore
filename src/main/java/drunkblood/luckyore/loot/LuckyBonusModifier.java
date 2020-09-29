@@ -65,5 +65,10 @@ public class LuckyBonusModifier extends LootModifier {
 		public LuckyBonusModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
 			return new LuckyBonusModifier(conditionsIn);
 		}
+
+		@Override
+		public JsonObject write(LuckyBonusModifier instance) {
+			return makeConditions(instance.conditions);
+		}
 	}
 }

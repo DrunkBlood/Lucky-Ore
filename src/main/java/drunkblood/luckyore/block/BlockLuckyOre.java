@@ -1,15 +1,17 @@
 package drunkblood.luckyore.block;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Random;
 
 import drunkblood.luckyore.registries.ModEnchantments;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -35,33 +37,12 @@ public class BlockLuckyOre extends Block{
 					}
 				}
 			}
-			boolean fortune = false;
-			short fortuneLVL = 0;
-			boolean silk = false;
-			boolean lucky = false;
-			// Get tool enchantment
-			ListNBT nbttaglist = player.getHeldItemMainhand().getEnchantmentTagList();
-			if (nbttaglist != null)
-	        {
-	            for (int i = 0; i < nbttaglist.size(); ++i)
-	            {
-	                String enchantmentID = nbttaglist.getCompound(i).getString("id");
-
-	                if (enchantmentID.equals(String.valueOf((Object)Enchantments.FORTUNE.getRegistryName())))
-	                {
-	                	fortune = true;
-	                	fortuneLVL = nbttaglist.getCompound(i).getShort("lvl");
-	                }
-	                if (enchantmentID.equals(String.valueOf((Object)Enchantments.SILK_TOUCH.getRegistryName()))) {
-	                	silk = true;
-	                }
-					if (enchantmentID
-							.equals(String
-									.valueOf((Object) ModEnchantments.LUCKY.get().getRegistryName()))) {
-	                	lucky = true;
-	                }
-	            }
-	        }
+			// get enchantments
+			Map<Enchantment, Integer> enchants = EnchantmentHelper.getEnchantments(player.getHeldItemMainhand());
+			boolean fortune = enchants.containsKey(Enchantments.FORTUNE);
+			short fortuneLVL = fortune ? (short) enchants.get(Enchantments.FORTUNE).intValue() : 0;
+			boolean silk = enchants.containsKey(Enchantments.SILK_TOUCH);
+			boolean lucky = enchants.containsKey(ModEnchantments.LUCKY.get());
 			//Replace Blocks by distribution
 			if(!stoneNearby.isEmpty() && pos.getY() <= 120 && pos.getY() >= 5 && !silk) {
 				int amountConverted = random.nextInt(2 + (fortune ? fortuneLVL*2: 0)) + 2;

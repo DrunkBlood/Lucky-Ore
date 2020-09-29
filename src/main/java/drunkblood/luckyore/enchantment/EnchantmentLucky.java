@@ -17,11 +17,11 @@ public class EnchantmentLucky extends Enchantment{
 	}
 	@Override
 	public int getMaxEnchantability(int enchantmentLevel) {
-	   return this.getMinEnchantability(enchantmentLevel) + 50;
+		return this.getMinEnchantability(enchantmentLevel) + 50;
 	}
 	@Override
 	public boolean canApplyTogether(Enchantment ench) {
-	   return super.canApplyTogether(ench) && ench != Enchantments.SILK_TOUCH;
+		return super.canApplyTogether(ench) && ench != Enchantments.SILK_TOUCH;
 	}
 
 	@Override

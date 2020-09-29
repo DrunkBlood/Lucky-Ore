@@ -35,9 +35,9 @@ public class ModOres {
 						.func_242728_a().func_242731_b(LuckyOreConfig.lucky_ore_vein_count));
 		if (LuckyOreConfig.nether_lucky_ore_enabled) {
 			Registry.register(WorldGenRegistries.field_243653_e, ModBlocks.NETHER_LUCKY_ORE.get().getRegistryName(),
-					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241883_b,
-							ModBlocks.NETHER_LUCKY_ORE.get().getDefaultState(),
-							LuckyOreConfig.nether_lucky_ore_vein_size))
+					Feature.ORE
+							.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241883_b,
+									ModBlocks.NETHER_LUCKY_ORE.get().getDefaultState(), LuckyOreConfig.nether_lucky_ore_vein_size))
 							.withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(
 									LuckyOreConfig.nether_lucky_ore_min_y, LuckyOreConfig.nether_lucky_ore_min_y,
 									LuckyOreConfig.nether_lucky_ore_max_y)))
