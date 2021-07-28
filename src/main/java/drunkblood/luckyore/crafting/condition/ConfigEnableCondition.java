@@ -9,7 +9,7 @@ import com.google.gson.JsonParseException;
 
 import drunkblood.luckyore.LuckyOre;
 import drunkblood.luckyore.config.LuckyOreConfig;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionSerializer;
 
@@ -22,6 +22,9 @@ public class ConfigEnableCondition implements ICondition {
 		configs.put("lucky_emerald_ore", () -> LuckyOreConfig.lucky_emerald_ore_enabled);
 		configs.put("lucky_lapis_ore", () -> LuckyOreConfig.lucky_lapis_ore_enabled);
 		configs.put("lucky_redstone_ore", () -> LuckyOreConfig.lucky_redstone_ore_enabled);
+		configs.put("lucky_iron_ore", () -> LuckyOreConfig.lucky_iron_ore_enabled);
+		configs.put("lucky_gold_ore", () -> LuckyOreConfig.lucky_gold_ore_enabled);
+		configs.put("lucky_copper_ore", () -> LuckyOreConfig.lucky_copper_ore_enabled);
 		configs.put("nether_lucky_ore", () -> LuckyOreConfig.nether_lucky_ore_enabled);
 	}
 	private final String configKey;

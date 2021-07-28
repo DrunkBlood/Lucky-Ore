@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "luckyore:blocks/lucky_copper_ore"
+    }
+}

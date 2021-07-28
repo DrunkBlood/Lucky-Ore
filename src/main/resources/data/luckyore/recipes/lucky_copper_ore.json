@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "conditions": [{
+		"type": "luckyore:enabled_by_cfg",
+		"enabled_by_cfg": "lucky_copper_ore"
+	}],
+	"pattern":
+    [
+        " x ",
+        "xax",
+        " x "
+    ],
+    "key":
+    {
+        "a":
+        {
+            "item": "minecraft:copper_ore"
+        },
+        "x":
+        {
+            "item": "luckyore:lucky_dust"
+        }
+    },
+    "result":
+    {
+        "item": "luckyore:lucky_copper_ore",
+        "count": 1
+    }
+}

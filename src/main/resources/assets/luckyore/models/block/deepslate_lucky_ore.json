@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "luckyore:blocks/deepslate_lucky_ore"
+    }
+}

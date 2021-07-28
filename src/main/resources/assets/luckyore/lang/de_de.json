@@ -1,8 +1,12 @@
 {
 "item.luckyore.lucky_dust" : "Glücks-Staub",
 "block.luckyore.lucky_ore" : "Glückserz",
+"block.luckyore.deepslate_lucky_ore" : "Tiefenschiefer-Glückserz",
 "block.luckyore.nether_lucky_ore" : "Nether-Glückserz",
 "block.luckyore.lucky_diamond_ore":"Glücks-Diamanterz",
+"block.luckyore.lucky_iron_ore":"Glücks-Eisenerz",
+"block.luckyore.lucky_copper_ore":"Glücks-Kupfererz",
+"block.luckyore.lucky_gold_ore":"Glücks-Golderz",
 "block.luckyore.lucky_redstone_ore":"Glücks-Redstone-Erz",
 "block.luckyore.lucky_lapis_ore":"Glücks-Lapislazulierz",
 "block.luckyore.lucky_emerald_ore":"Glücks-Smaragerz",

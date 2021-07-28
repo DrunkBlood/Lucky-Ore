@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "luckyore:lucky_lapis_ore",
+    "luckyore:lucky_iron_ore",
+    "luckyore:lucky_copper_ore",
+    "luckyore:nether_lucky_ore",
+    "luckyore:deepslate_lucky_ore",
+    "luckyore:lucky_ore"
+  ]
+}

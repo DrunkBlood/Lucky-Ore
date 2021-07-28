@@ -9,6 +9,9 @@ public class ClientConfig {
 	public final ForgeConfigSpec.BooleanValue lucky_emerald_ore_enabled;
 	public final ForgeConfigSpec.BooleanValue lucky_lapis_ore_enabled;
 	public final ForgeConfigSpec.BooleanValue lucky_redstone_ore_enabled;
+	public final ForgeConfigSpec.BooleanValue lucky_iron_ore_enabled;
+	public final ForgeConfigSpec.BooleanValue lucky_copper_ore_enabled;
+	public final ForgeConfigSpec.BooleanValue lucky_gold_ore_enabled;
 	public final ForgeConfigSpec.BooleanValue nether_lucky_ore_enabled;
 
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_vein_count;
@@ -19,10 +22,13 @@ public class ClientConfig {
 	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_vein_size;
 	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_min_y;
 	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_max_y;
+	public final ForgeConfigSpec.ConfigValue<Integer> general_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_emerald_ore_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_lapis_ore_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_redstone_ore_increased_drops;
-	public final ForgeConfigSpec.ConfigValue<Integer> general_increased_drops;
+	public final ForgeConfigSpec.ConfigValue<Integer> lucky_iron_ore_increased_drops;
+	public final ForgeConfigSpec.ConfigValue<Integer> lucky_copper_ore_increased_drops;
+	public final ForgeConfigSpec.ConfigValue<Integer> lucky_gold_ore_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_diamond_ore_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Double> zombie_dust_drop_chance;
 	public final ForgeConfigSpec.ConfigValue<Double> zombie_dust_looting_multiplier;
@@ -37,6 +43,12 @@ public class ClientConfig {
 				.translation(LuckyOre.MODID + "config.lucky_lapis_ore").define("lucky_lapis_ore", true);
 		lucky_redstone_ore_enabled = builder.comment("The Lucky Redstone Ore is obtainable/enabled")
 				.translation(LuckyOre.MODID + "config.lucky_redstone_ore").define("lucky_redstone_ore", true);
+		lucky_iron_ore_enabled = builder.comment("The Lucky Iron Ore is obtainable/enabled")
+				.translation(LuckyOre.MODID + "config.lucky_iron_ore").define("lucky_redstone_ore", true);
+		lucky_copper_ore_enabled = builder.comment("The Lucky Copper Ore is obtainable/enabled")
+				.translation(LuckyOre.MODID + "config.lucky_copper_ore").define("lucky_redstone_ore", true);
+		lucky_gold_ore_enabled = builder.comment("The Lucky Gold Ore is obtainable/enabled")
+				.translation(LuckyOre.MODID + "config.lucky_gold_ore").define("lucky_redstone_ore", true);
 		nether_lucky_ore_enabled = builder.comment("Nether Lucky Ore is obtainable/enabled")
 				.translation(LuckyOre.MODID + "config.lucky_diamond_ore").define("lucky_diamond_ore", true);
 		zombie_dust_drop_chance = builder.comment("Chances for Rare Zombie Drops - see vanilla zombie.json loottable")
@@ -56,6 +68,9 @@ public class ClientConfig {
 		lucky_lapis_ore_increased_drops = builder.define("lucky_lapis_ore_inc_drops", 8);
 		lucky_redstone_ore_increased_drops = builder.define("lucky_redstone_ore_increased_drops", 6);
 		lucky_diamond_ore_increased_drops = builder.define("lucky_diamond_ore_increased_drops", 0);
+		lucky_iron_ore_increased_drops = builder.define("lucky_iron_ore_increased_drops", 2);
+		lucky_copper_ore_increased_drops = builder.define("lucky_copper_ore_increased_drops", 3);
+		lucky_gold_ore_increased_drops = builder.define("lucky_gold_ore_increased_drops", 5);
 		builder.pop(2);
 		builder.push("worldgen");
 		builder.push("lucky_ore");

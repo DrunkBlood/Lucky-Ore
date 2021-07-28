@@ -1,31 +1,35 @@
 package drunkblood.luckyore.enchantment;
 
 import drunkblood.luckyore.config.LuckyOreConfig;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantments;
 
-public class EnchantmentLucky extends Enchantment{
+public class EnchantmentLucky extends Enchantment {
 
-	public EnchantmentLucky(Rarity rarityIn, EquipmentSlotType... slots) {
-		super(rarityIn, EnchantmentType.DIGGER, slots);
+	public EnchantmentLucky(Rarity rarity, EnchantmentCategory enchantmentCategory, EquipmentSlot... equipmentSlots) {
+		super(rarity, enchantmentCategory, equipmentSlots);
 	}
+
+
 	@Override
-	public int getMinEnchantability(int enchantmentLevel) {
-	    return enchantmentLevel * 25;
-	}
-	@Override
-	public int getMaxEnchantability(int enchantmentLevel) {
-		return this.getMinEnchantability(enchantmentLevel) + 50;
-	}
-	@Override
-	public boolean canApplyTogether(Enchantment ench) {
-		return super.canApplyTogether(ench) && ench != Enchantments.SILK_TOUCH;
+	public int getMinCost(int enchantmentLevel) {
+		return enchantmentLevel * 25;
 	}
 
 	@Override
-	public boolean isTreasureEnchantment() {
+	public int getMaxCost(int enchantmentLevel) {
+		return this.getMinCost(enchantmentLevel) + 50;
+	}
+
+	@Override
+	public boolean checkCompatibility(Enchantment ench) {
+		return super.checkCompatibility(ench) && ench != Enchantments.SILK_TOUCH;
+	}
+
+	@Override
+	public boolean isTreasureOnly() {
 		return true;
 	}
 

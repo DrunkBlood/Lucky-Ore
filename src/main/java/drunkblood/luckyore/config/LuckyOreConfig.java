@@ -7,13 +7,19 @@ public class LuckyOreConfig {
 	public static boolean lucky_diamond_ore_enabled;
 	public static boolean lucky_emerald_ore_enabled;
 	public static boolean lucky_lapis_ore_enabled;
+	public static boolean lucky_iron_ore_enabled;
+	public static boolean lucky_copper_ore_enabled;
+	public static boolean lucky_gold_ore_enabled;
 	public static boolean lucky_redstone_ore_enabled;
 	public static boolean nether_lucky_ore_enabled;
 	public static int lucky_emerald_ore_increased_drops;
 	public static int lucky_lapis_ore_increased_drops;
 	public static int lucky_redstone_ore_increased_drops;
-	public static int general_increased_drops;
+	public static int lucky_iron_ore_increased_drops;
+	public static int lucky_copper_ore_increased_drops;
+	public static int lucky_gold_ore_increased_drops;
 	public static int lucky_diamond_ore_increased_drops;
+	public static int general_increased_drops;
 	public static float zombie_dust_drop_chance;
 	public static float zombie_dust_looting_multiplier;
 

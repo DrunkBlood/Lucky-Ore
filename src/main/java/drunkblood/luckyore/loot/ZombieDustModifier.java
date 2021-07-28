@@ -6,13 +6,13 @@ import com.google.gson.JsonObject;
 
 import drunkblood.luckyore.config.LuckyOreConfig;
 import drunkblood.luckyore.registries.ModItems;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootContext;
-import net.minecraft.loot.LootParameters;
-import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 
@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 
 public class ZombieDustModifier extends LootModifier {
 
-	protected ZombieDustModifier(ILootCondition[] conditionsIn) {
+	protected ZombieDustModifier(LootItemCondition[] conditionsIn) {
 		super(conditionsIn);
 	}
 
@@ -35,8 +35,8 @@ public class ZombieDustModifier extends LootModifier {
 		 * p_test_1_.getRandom().nextFloat() < this.chance + (float)i *
 		 * this.lootingMultiplier;
 		 */
-		Entity entity = context.get(LootParameters.THIS_ENTITY);
-		if (entity instanceof ZombieEntity) {
+		Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
+		if (entity instanceof Zombie) {
 			int i = context.getLootingModifier();
 			if (context.getRandom().nextFloat() < LuckyOreConfig.zombie_dust_drop_chance
 					+ (float) i * LuckyOreConfig.zombie_dust_looting_multiplier) {
@@ -52,7 +52,7 @@ public class ZombieDustModifier extends LootModifier {
 	public static class Serializer extends GlobalLootModifierSerializer<ZombieDustModifier> {
 
 		@Override
-		public ZombieDustModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
+		public ZombieDustModifier read(ResourceLocation name, JsonObject object, LootItemCondition[] conditionsIn) {
 			return new ZombieDustModifier(conditionsIn);
 		}
 

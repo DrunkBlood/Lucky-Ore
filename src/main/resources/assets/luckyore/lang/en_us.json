@@ -1,10 +1,14 @@
 {
 "item.luckyore.lucky_dust" : "Lucky Dust",
 "block.luckyore.lucky_ore" : "Lucky Ore",
+"block.luckyore.deepslate_lucky_ore" : "Deepslate Lucky Ore",
 "block.luckyore.nether_lucky_ore" : "Nether Lucky Ore",
 "block.luckyore.lucky_diamond_ore":"Lucky Diamond Ore",
 "block.luckyore.lucky_redstone_ore":"Lucky Redstone Ore",
 "block.luckyore.lucky_lapis_ore":"Lucky Lapis Lazuli Ore",
+"block.luckyore.lucky_iron_ore":"Lucky Iron Ore",
+"block.luckyore.lucky_copper_ore":"Lucky Copper Ore",
+"block.luckyore.lucky_gold_ore":"Lucky Gold Ore",
 "block.luckyore.lucky_emerald_ore":"Lucky Emerald Ore",
 "enchantment.luckyore.ench_lucky" : "Lucky",
 "enchantment.luckyore.ench_lucky.desc" : "Increases the yield of the Lucky Ore"

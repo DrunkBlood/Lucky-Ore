@@ -1,9 +1,6 @@
 package drunkblood.luckyore;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import drunkblood.luckyore.config.ConfigHolder;
 import drunkblood.luckyore.crafting.condition.ConfigEnableCondition;
 import drunkblood.luckyore.registries.ModBlocks;
@@ -16,6 +13,8 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(LuckyOre.MODID)
 public class LuckyOre {
