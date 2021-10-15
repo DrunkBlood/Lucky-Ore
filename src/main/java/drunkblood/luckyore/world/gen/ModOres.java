@@ -35,7 +35,6 @@ public class ModOres {
 		 */
 		ImmutableList<OreConfiguration.TargetBlockState> LUCKY_ORE_TARGETS = ImmutableList.of(
 				OreConfiguration.target(OreConfiguration.Predicates.STONE_ORE_REPLACEABLES, ModBlocks.LUCKY_ORE.get().defaultBlockState()),
-				// TODO add Deepsalte luckyore variant
 				OreConfiguration.target(OreConfiguration.Predicates.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_LUCKY_ORE.get().defaultBlockState())
 
 		);
@@ -57,38 +56,6 @@ public class ModOres {
 							VerticalAnchor.absolute(LuckyOreConfig.nether_lucky_ore_max_y))
 					.squared()
 					.count(LuckyOreConfig.nether_lucky_ore_vein_count));
-	}
-
-	public static void setupOres() {
-		for (Map.Entry<ResourceKey<Biome>, Biome> biome : BuiltinRegistries.BIOME.entrySet()) {
-			if (!biome.getValue().getBiomeCategory().equals(Biome.BiomeCategory.NETHER)
-					&& !biome.getValue().getBiomeCategory().equals(Biome.BiomeCategory.THEEND)) {
-				addFeatureToBiome(biome.getValue(), GenerationStep.Decoration.UNDERGROUND_ORES,
-						BuiltinRegistries.CONFIGURED_FEATURE.get(ModBlocks.LUCKY_ORE.get().getRegistryName()));
-			}
-			if (biome.getValue().getBiomeCategory().equals(Biome.BiomeCategory.NETHER)
-					&& LuckyOreConfig.nether_lucky_ore_enabled) {
-				addFeatureToBiome(biome.getValue(), GenerationStep.Decoration.UNDERGROUND_ORES,
-						BuiltinRegistries.CONFIGURED_FEATURE
-								.get(ModBlocks.NETHER_LUCKY_ORE.get().getRegistryName()));
-
-			}
-		}
-	}
-
-	public static void addFeatureToBiome(Biome biome, GenerationStep.Decoration decoration,
-			ConfiguredFeature<?, ?> configuredFeature) {
-		List<List<Supplier<ConfiguredFeature<?, ?>>>> biomeFeatures = new ArrayList<>(
-				biome.getGenerationSettings().features());
-		while (biomeFeatures.size() <= decoration.ordinal()) {
-			biomeFeatures.add(Lists.newArrayList());
-		}
-		List<Supplier<ConfiguredFeature<?, ?>>> features = new ArrayList<>(biomeFeatures.get(decoration.ordinal()));
-		features.add(() -> configuredFeature);
-		biomeFeatures.set(decoration.ordinal(), features);
-
-		ObfuscationReflectionHelper.setPrivateValue(BiomeGenerationSettings.class, biome.getGenerationSettings(), biomeFeatures,
-				"features");
 	}
 
 }

@@ -42,7 +42,6 @@ public class LuckyOre {
 		// Crafting
 		CraftingHelper.register(new ConfigEnableCondition.Serializer());
 
-
 	}
 
 }

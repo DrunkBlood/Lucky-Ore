@@ -3,8 +3,14 @@ package drunkblood.luckyore.events;
 import drunkblood.luckyore.LuckyOre;
 import drunkblood.luckyore.config.ConfigHolder;
 import drunkblood.luckyore.config.LuckyOreConfig;
+import drunkblood.luckyore.registries.ModBlocks;
 import drunkblood.luckyore.world.gen.ModOres;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -58,8 +64,7 @@ public class ModEventSubscriber {
 
 	@SubscribeEvent
 	public static void CommonSetup(FMLCommonSetupEvent event) {
-		LuckyOreConfig.nether_lucky_ore_max_y = 128;
 		ModOres.initOres();
-		ModOres.setupOres();
 	}
+
 }
