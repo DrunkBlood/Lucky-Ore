@@ -25,13 +25,13 @@ public class LuckyOreConfig {
 
 	// world gen
 	public static int lucky_ore_vein_count;
-	public static int lucky_ore_vein_size;
-	public static int lucky_ore_min_y;
-	public static int lucky_ore_max_y;
+	public static int lucky_ore_above_low;
+	public static int lucky_ore_below_high;
+	public static int lucky_ore_air_discard;
 	public static int nether_lucky_ore_vein_count;
-	public static int nether_lucky_ore_vein_size;
-	public static int nether_lucky_ore_min_y;
-	public static int nether_lucky_ore_max_y;
+	public static int nether_lucky_ore_above_low;
+	public static int nether_lucky_ore_below_high;
+	public static int nether_lucky_ore_air_discard;
 	// Server
 
 }

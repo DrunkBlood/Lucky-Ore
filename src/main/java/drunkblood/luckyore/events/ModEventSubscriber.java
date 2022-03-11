@@ -3,19 +3,11 @@ package drunkblood.luckyore.events;
 import drunkblood.luckyore.LuckyOre;
 import drunkblood.luckyore.config.ConfigHolder;
 import drunkblood.luckyore.config.LuckyOreConfig;
-import drunkblood.luckyore.registries.ModBlocks;
 import drunkblood.luckyore.world.gen.ModOres;
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.IConfigSpec;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
@@ -36,12 +28,13 @@ public class ModEventSubscriber {
 			LuckyOreConfig.lucky_redstone_ore_enabled = ConfigHolder.CLIENT.lucky_redstone_ore_enabled.get();
 			LuckyOreConfig.nether_lucky_ore_enabled = ConfigHolder.CLIENT.nether_lucky_ore_enabled.get();
 			LuckyOreConfig.lucky_ore_vein_count = ConfigHolder.CLIENT.lucky_ore_vein_count.get();
-			LuckyOreConfig.lucky_ore_vein_size = ConfigHolder.CLIENT.lucky_ore_vein_size.get();
-			LuckyOreConfig.lucky_ore_min_y = ConfigHolder.CLIENT.lucky_ore_min_y.get();
-			LuckyOreConfig.lucky_ore_max_y = ConfigHolder.CLIENT.lucky_ore_max_y.get();
+			LuckyOreConfig.lucky_ore_above_low = ConfigHolder.CLIENT.lucky_ore_above_low.get();
+			LuckyOreConfig.lucky_ore_below_high = ConfigHolder.CLIENT.lucky_ore_below_high.get();
+			LuckyOreConfig.lucky_ore_air_discard = ConfigHolder.CLIENT.lucky_ore_air_discard.get();
 			LuckyOreConfig.nether_lucky_ore_vein_count = ConfigHolder.CLIENT.nether_lucky_ore_vein_count.get();
-			LuckyOreConfig.nether_lucky_ore_vein_size = ConfigHolder.CLIENT.nether_lucky_ore_vein_size.get();
-			LuckyOreConfig.nether_lucky_ore_min_y = ConfigHolder.CLIENT.nether_lucky_ore_min_y.get();
+			LuckyOreConfig.nether_lucky_ore_above_low = ConfigHolder.CLIENT.nether_lucky_ore_above_low.get();
+			LuckyOreConfig.nether_lucky_ore_below_high = ConfigHolder.CLIENT.nether_lucky_ore_below_high.get();
+			LuckyOreConfig.nether_lucky_ore_air_discard = ConfigHolder.CLIENT.nether_lucky_ore_air_discard.get();
 			LuckyOreConfig.lucky_emerald_ore_increased_drops = ConfigHolder.CLIENT.lucky_emerald_ore_increased_drops
 					.get();
 			LuckyOreConfig.lucky_lapis_ore_increased_drops = ConfigHolder.CLIENT.lucky_lapis_ore_increased_drops.get();

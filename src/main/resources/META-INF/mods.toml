@@ -17,11 +17,9 @@ issueTrackerURL="https://github.com/DrunkBlood/Lucky-Ore/issues" #optional
  #    The modid of the mod
 modId="luckyore" #mandatory
  #    The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="1.1.1-1.17.1" #mandatory
+version="1.0.0-1.18.2" #mandatory
   #    A display name for the mod
 displayName="Lucky Ore" #mandatory
- #    A URL to query for updates for this mod. See the JSON update specification <here>
-#updateJSONURL="https://github.com/DrunkBlood/Lucky-Ore/blob/master/update.json" #optional
  #    A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://www.curseforge.com/minecraft/mc-mods/lucky-ore" #optional
  #    A file name (in the root of the mod JAR) containing a logo for display
@@ -44,7 +42,7 @@ This dust can be used to infuses Diamond-, Redstone-, Lapis-, Emerald-ore and Ne
        # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
        # The version range of the dependency
-    versionRange="[34,)" #mandatory
+    versionRange="[40,)" #mandatory
        # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
        # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -53,6 +51,6 @@ This dust can be used to infuses Diamond-, Redstone-, Lapis-, Emerald-ore and Ne
 [[dependencies.luckyore]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17,)"
+    versionRange="[1.18.2,)"
     ordering="NONE"
     side="BOTH"

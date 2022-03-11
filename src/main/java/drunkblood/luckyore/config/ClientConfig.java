@@ -15,13 +15,13 @@ public class ClientConfig {
 	public final ForgeConfigSpec.BooleanValue nether_lucky_ore_enabled;
 
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_vein_count;
-	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_vein_size;
-	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_min_y;
-	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_max_y;
+	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_above_low;
+	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_below_high;
+	public final ForgeConfigSpec.ConfigValue<Integer> lucky_ore_air_discard;
 	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_vein_count;
-	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_vein_size;
-	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_min_y;
-	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_max_y;
+	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_above_low;
+	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_below_high;
+	public final ForgeConfigSpec.ConfigValue<Integer> nether_lucky_ore_air_discard;
 	public final ForgeConfigSpec.ConfigValue<Integer> general_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_emerald_ore_increased_drops;
 	public final ForgeConfigSpec.ConfigValue<Integer> lucky_lapis_ore_increased_drops;
@@ -75,17 +75,17 @@ public class ClientConfig {
 		builder.push("worldgen");
 		builder.push("lucky_ore");
 		lucky_ore_vein_count = builder.comment("Configuration for Lucky Ore")
-				.translation(LuckyOre.MODID + "config.lucky_ore_gen").define("vein_count", 25);
-		lucky_ore_vein_size = builder.define("vein_size", 3);
-		lucky_ore_min_y = builder.define("min_y", 5);
-		lucky_ore_max_y = builder.define("max_y", 128);
+				.translation(LuckyOre.MODID + "config.lucky_ore_gen").define("vein_count", 20);
+		lucky_ore_above_low = builder.define("above_min_y", 10);
+		lucky_ore_below_high = builder.define("below_max_y", 10);
+		lucky_ore_air_discard = builder.define("discardChanceOnAirExposure", 9);
 		builder.pop();
 		builder.push("nether_lucky ore");
 		nether_lucky_ore_vein_count = builder.comment("Configuration for Nether Lucky Ore")
 				.translation(LuckyOre.MODID + "config.lucky_ore_gen").define("vein_count", 35);
-		nether_lucky_ore_vein_size = builder.define("vein_size", 3);
-		nether_lucky_ore_min_y = builder.define("min_y", 5);
-		nether_lucky_ore_max_y = builder.comment("Warning the game will crash if the valuye is over 128. Vanilla can not generate Ores above 128").define("max_y", 128);
+		nether_lucky_ore_above_low = builder.define("above_min_y", 10);
+		nether_lucky_ore_below_high = builder.define("below_max_y", 10);
+		nether_lucky_ore_air_discard = builder.define("discardChanceOnAirExposure", 14);
 
 	}
 }

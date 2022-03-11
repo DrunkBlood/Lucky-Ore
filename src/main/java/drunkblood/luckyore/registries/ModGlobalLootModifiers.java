@@ -4,9 +4,9 @@ import drunkblood.luckyore.LuckyOre;
 import drunkblood.luckyore.loot.LuckyBonusModifier;
 import drunkblood.luckyore.loot.ZombieDustModifier;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModGlobalLootModifiers {
 	public static final DeferredRegister<GlobalLootModifierSerializer<?>> REG = DeferredRegister

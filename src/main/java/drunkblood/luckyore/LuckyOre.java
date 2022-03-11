@@ -7,6 +7,7 @@ import drunkblood.luckyore.registries.ModBlocks;
 import drunkblood.luckyore.registries.ModEnchantments;
 import drunkblood.luckyore.registries.ModGlobalLootModifiers;
 import drunkblood.luckyore.registries.ModItems;
+import drunkblood.luckyore.world.gen.ModOres;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
