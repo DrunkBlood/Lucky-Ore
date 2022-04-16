@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModGlobalLootModifiers {
 	public static final DeferredRegister<GlobalLootModifierSerializer<?>> REG = DeferredRegister
-			.create(ForgeRegistries.LOOT_MODIFIER_SERIALIZERS, LuckyOre.MODID);
+			.create(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, LuckyOre.MODID);
 
 	public static final RegistryObject<GlobalLootModifierSerializer<LuckyBonusModifier>> LUCKY_BONUS = REG
 			.register("lucky_bonus", LuckyBonusModifier.Serializer::new);
