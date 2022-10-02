@@ -3,11 +3,7 @@ package drunkblood.luckyore;
 
 import drunkblood.luckyore.config.ConfigHolder;
 import drunkblood.luckyore.crafting.condition.ConfigEnableCondition;
-import drunkblood.luckyore.registries.ModBlocks;
-import drunkblood.luckyore.registries.ModEnchantments;
-import drunkblood.luckyore.registries.ModGlobalLootModifiers;
-import drunkblood.luckyore.registries.ModItems;
-import drunkblood.luckyore.world.gen.ModOres;
+import drunkblood.luckyore.registries.*;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -33,6 +29,8 @@ public class LuckyOre {
 		ModItems.REG.register(modBus);
 		ModEnchantments.REG.register(modBus);
 		ModGlobalLootModifiers.REG.register(modBus);
+		ModOres.REG_CONFIG.register(modBus);
+		ModOres.REG_PLACED.register(modBus);
 
 		// Config
 		modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);

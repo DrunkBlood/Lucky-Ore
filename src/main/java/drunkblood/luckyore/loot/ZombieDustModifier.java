@@ -1,22 +1,21 @@
 package drunkblood.luckyore.loot;
 
-import java.util.List;
-
-import com.google.gson.JsonObject;
-
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import drunkblood.luckyore.config.LuckyOreConfig;
 import drunkblood.luckyore.registries.ModItems;
-import net.minecraft.resources.ResourceLocation;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
-
-import javax.annotation.Nonnull;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 public class ZombieDustModifier extends LootModifier {
 
@@ -24,13 +23,18 @@ public class ZombieDustModifier extends LootModifier {
 		super(conditionsIn);
 	}
 
+	public static RegistryObject<Codec<ZombieDustModifier>> registerCodec(final DeferredRegister<Codec<? extends IGlobalLootModifier>> REG) {
+		return REG.register("zombie_dust", () ->
+				RecordCodecBuilder.create(inst -> codecStart(inst).apply(inst, ZombieDustModifier::new)
+				));
+	}
+
 	@Override
-	@Nonnull
-	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+	protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
 		/*
 		 * "condition": "minecraft:random_chance_with_looting", "chance": 0.025,
 		 * "looting_multiplier": 0.01
-		 * 
+		 *
 		 * int i = p_test_1_.getLootingModifier(); return
 		 * p_test_1_.getRandom().nextFloat() < this.chance + (float)i *
 		 * this.lootingMultiplier;
@@ -43,23 +47,16 @@ public class ZombieDustModifier extends LootModifier {
 				generatedLoot.add(new ItemStack(ModItems.LUCKY_DUST.get(), 1));
 			}
 		}
-		
-		 
+
+
 
 		return generatedLoot;
 	}
 
-	public static class Serializer extends GlobalLootModifierSerializer<ZombieDustModifier> {
-
-		@Override
-		public ZombieDustModifier read(ResourceLocation name, JsonObject object, LootItemCondition[] conditionsIn) {
-			return new ZombieDustModifier(conditionsIn);
-		}
-
-		@Override
-		public JsonObject write(ZombieDustModifier instance) {
-			return makeConditions(instance.conditions);
-		}
+	@Override
+	public Codec<? extends IGlobalLootModifier> codec() {
+		return null;
 	}
+
 
 }

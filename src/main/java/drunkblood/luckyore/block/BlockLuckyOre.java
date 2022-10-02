@@ -3,6 +3,7 @@ package drunkblood.luckyore.block;
 import drunkblood.luckyore.registries.ModEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -43,7 +44,7 @@ public class BlockLuckyOre extends Block {
 	      //level.playEvent(player, 2001, pos, getStateId(state));
 		super.playerWillDestroy(level, pos, state, player);
 		if(!level.isClientSide()) {
-			Random random = level.random;
+			RandomSource random = level.random;
 			ArrayList<ReplacementPos> replacements = new ArrayList<>();
 			BlockPos.MutableBlockPos testBlock = new BlockPos.MutableBlockPos();
 			int xPos = pos.getX();

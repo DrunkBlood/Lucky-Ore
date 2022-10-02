@@ -6,6 +6,7 @@ import java.util.Random;
 
 import drunkblood.luckyore.registries.ModEnchantments;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -27,7 +28,7 @@ public class BlockNetherLuckyOre extends Block {
 	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
 		super.playerWillDestroy(level, pos, state, player);
 		if(!level.isClientSide()) {
-			Random random = level.random;
+			RandomSource random = level.random;
 			ArrayList<BlockPos> netherrackNearby = new ArrayList<BlockPos>();
 			
 			for(int z = -1; z<2;z++) {

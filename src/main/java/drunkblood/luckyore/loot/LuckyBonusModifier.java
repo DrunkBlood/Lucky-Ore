@@ -1,37 +1,40 @@
 package drunkblood.luckyore.loot;
 
 
-import java.util.List;
-import java.util.Random;
-
-import javax.annotation.Nonnull;
-
-import com.google.gson.JsonObject;
-
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import drunkblood.luckyore.config.LuckyOreConfig;
 import drunkblood.luckyore.registries.ModBlocks;
-
-import net.minecraft.resources.ResourceLocation;
+import drunkblood.luckyore.registries.ModGlobalLootModifiers;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 public class LuckyBonusModifier extends LootModifier {
-
 
 	protected LuckyBonusModifier(LootItemCondition[] conditionsIn) {
 		super(conditionsIn);
 	}
 
-	@Nonnull
+	public static RegistryObject<Codec<LuckyBonusModifier>> registerCodec(final DeferredRegister<Codec<? extends IGlobalLootModifier>> REG){
+		return REG.register("lucky_bonus", () ->
+				RecordCodecBuilder.create(inst -> codecStart(inst).apply(inst, LuckyBonusModifier::new)
+				));
+	}
+
 	@Override
-	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+	protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
 		ItemStack tool = context.getParam(LootContextParams.TOOL);
-		Random random = context.getRandom();
+		RandomSource random = context.getRandom();
 		int increasedDrops = LuckyOreConfig.general_increased_drops;
 		if (tool != null) {
 			BlockState state = context.getParam(LootContextParams.BLOCK_STATE);
@@ -67,16 +70,11 @@ public class LuckyBonusModifier extends LootModifier {
 		return generatedLoot;
 	}
 
-	public static class Serializer extends GlobalLootModifierSerializer<LuckyBonusModifier> {
 
-		@Override
-		public LuckyBonusModifier read(ResourceLocation name, JsonObject object, LootItemCondition[] conditionsIn) {
-			return new LuckyBonusModifier(conditionsIn);
-		}
 
-		@Override
-		public JsonObject write(LuckyBonusModifier instance) {
-			return makeConditions(instance.conditions);
-		}
+	@Override
+	public Codec<? extends IGlobalLootModifier> codec() {
+		return ModGlobalLootModifiers.LUCKY_BONUS.get();
 	}
+
 }
