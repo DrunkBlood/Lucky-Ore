@@ -30,6 +30,14 @@ public class BlockLuckyOre extends Block {
 	      //level.playEvent(player, 2001, pos, getStateId(state));
 		super.playerWillDestroy(level, pos, state, player);
 		if(!level.isClientSide()) {
+			// get enchantments
+			Map<Enchantment, Integer> enchants = EnchantmentHelper.getEnchantments(player.getMainHandItem());
+			// early return
+			boolean silk = enchants.containsKey(Enchantments.SILK_TOUCH);
+			if(silk) return;
+			boolean fortune = enchants.containsKey(Enchantments.BLOCK_FORTUNE);
+			short fortuneLVL = fortune ? (short) enchants.get(Enchantments.BLOCK_FORTUNE).intValue() : 0;
+			boolean lucky = enchants.containsKey(ModEnchantments.LUCKY.get());
 			RandomSource random = level.random;
 			ArrayList<OreBlockPicker.ReplacementPos> replacements = new ArrayList<>();
 			BlockPos.MutableBlockPos testBlock = new BlockPos.MutableBlockPos();
@@ -45,18 +53,17 @@ public class BlockLuckyOre extends Block {
 							replacements.add(new OreBlockPicker.ReplacementPos(testBlock, OreBlockPicker.ReplacementType.STONE));
 						} else if(block == Blocks.DEEPSLATE){
 							replacements.add(new OreBlockPicker.ReplacementPos(testBlock, OreBlockPicker.ReplacementType.DEEPSLATE));
+						} else if(block == Blocks.DIORITE){
+							replacements.add(new OreBlockPicker.ReplacementPos(testBlock, OreBlockPicker.ReplacementType.DIORITE));
+						} else if(block == Blocks.ANDESITE){
+							replacements.add(new OreBlockPicker.ReplacementPos(testBlock, OreBlockPicker.ReplacementType.ANDERSITE));
+						} else if(block == Blocks.GRANITE){
+							replacements.add(new OreBlockPicker.ReplacementPos(testBlock, OreBlockPicker.ReplacementType.GRANITE));
 						}
 					}
 				}
 			}
-			// get enchantments
-			Map<Enchantment, Integer> enchants = EnchantmentHelper.getEnchantments(player.getMainHandItem());
-			boolean fortune = enchants.containsKey(Enchantments.BLOCK_FORTUNE);
-			short fortuneLVL = fortune ? (short) enchants.get(Enchantments.BLOCK_FORTUNE).intValue() : 0;
-			boolean silk = enchants.containsKey(Enchantments.SILK_TOUCH);
-			boolean lucky = enchants.containsKey(ModEnchantments.LUCKY.get());
-			// early return
-			if(silk || replacements.isEmpty()) return;
+			if(replacements.isEmpty()) return;
 
 			//Replace Blocks by distribution
 			int amountConverted = random.nextInt(2 + (fortune ? fortuneLVL * 2: 0)) + 2;

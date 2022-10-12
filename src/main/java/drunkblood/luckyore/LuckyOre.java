@@ -24,7 +24,6 @@ public class LuckyOre {
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
 	
 	public LuckyOre() {
-		BlockPos.MutableBlockPos testBlock = new BlockPos.MutableBlockPos();
 		final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		final ModLoadingContext modLoadingContext = ModLoadingContext.get();
 

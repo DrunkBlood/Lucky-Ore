@@ -1,6 +1,7 @@
 package drunkblood.luckyore.util;
 
 import drunkblood.luckyore.block.BlockLuckyOre;
+import drunkblood.luckyore.registries.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.util.RandomSource;
@@ -44,64 +45,81 @@ public class OreBlockPicker {
 
 
     private static BlockState getCoal(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.COAL_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_COAL_ORE.defaultBlockState();}
-            default -> {return Blocks.COAL_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE -> Blocks.COAL_ORE.defaultBlockState();
+            case DEEPSLATE -> Blocks.DEEPSLATE_COAL_ORE.defaultBlockState();
+            case DIORITE -> ModBlocks.COAL_DIORITE_ORE.get().defaultBlockState();
+            case ANDERSITE -> ModBlocks.COAL_ANDERSITE_ORE.get().defaultBlockState();
+            case GRANITE -> ModBlocks.COAL_GRANITE_ORE.get().defaultBlockState();
+        };
     }
 
     private static BlockState getIron(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.IRON_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_IRON_ORE.defaultBlockState();}
-            default -> {return Blocks.IRON_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE -> Blocks.IRON_ORE.defaultBlockState();
+            case DEEPSLATE -> Blocks.DEEPSLATE_IRON_ORE.defaultBlockState();
+            case GRANITE -> ModBlocks.IRON_GRANITE_ORE.get().defaultBlockState();
+            case ANDERSITE -> ModBlocks.IRON_ANDERSITE_ORE.get().defaultBlockState();
+            case DIORITE -> ModBlocks.IRON_DIORITE_ORE.get().defaultBlockState();
+        };
     }
 
     private static BlockState getCopper(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.COPPER_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_COPPER_ORE.defaultBlockState();}
-            default -> {return Blocks.COPPER_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE ->  Blocks.COPPER_ORE.defaultBlockState();
+            case DEEPSLATE ->  Blocks.DEEPSLATE_COPPER_ORE.defaultBlockState();
+            case ANDERSITE -> ModBlocks.COPPER_ANDERSITE_ORE.get().defaultBlockState();
+            case GRANITE -> ModBlocks.COPPER_GRANITE_ORE.get().defaultBlockState();
+            case DIORITE -> ModBlocks.COPPER_DIORITE_ORE.get().defaultBlockState();
+        };
     }
 
     private static BlockState getGold(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.GOLD_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_GOLD_ORE.defaultBlockState();}
-            default -> {return Blocks.GOLD_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE ->  Blocks.GOLD_ORE.defaultBlockState();
+            case DEEPSLATE ->  Blocks.DEEPSLATE_GOLD_ORE.defaultBlockState();
+            case DIORITE -> ModBlocks.GOLD_DIORITE_ORE.get().defaultBlockState();
+            case GRANITE -> ModBlocks.GOLD_GRANITE_ORE.get().defaultBlockState();
+            case ANDERSITE -> ModBlocks.GOLD_ANDERSITE_ORE.get().defaultBlockState();
+        };
     }
 
     private static BlockState getLapis(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.LAPIS_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_LAPIS_ORE.defaultBlockState();}
-            default -> {return Blocks.LAPIS_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE ->  Blocks.LAPIS_ORE.defaultBlockState();
+            case DEEPSLATE ->  Blocks.DEEPSLATE_LAPIS_ORE.defaultBlockState();
+            case DIORITE -> ModBlocks.LAPIS_DIORITE_ORE.get().defaultBlockState();
+            case GRANITE -> ModBlocks.LAPIS_GRANITE_ORE.get().defaultBlockState();
+            case ANDERSITE -> ModBlocks.LAPIS_ANDERSITE_ORE.get().defaultBlockState();
+        };
     }
 
     private static BlockState getDiamond(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.DIAMOND_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_DIAMOND_ORE.defaultBlockState();}
-            default -> {return Blocks.DIAMOND_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE ->  Blocks.DIAMOND_ORE.defaultBlockState();
+            case DEEPSLATE ->  Blocks.DEEPSLATE_DIAMOND_ORE.defaultBlockState();
+            case ANDERSITE -> ModBlocks.DIAMOND_ANDERSITE_ORE.get().defaultBlockState();
+            case DIORITE -> ModBlocks.DIAMOND_DIORITE_ORE.get().defaultBlockState();
+            case GRANITE -> ModBlocks.DIAMOND_GRANITE_ORE.get().defaultBlockState();
+        };
     }
 
     private static BlockState getRedstone(ReplacementType replacementType) {
-        switch (replacementType) {
-            case STONE -> {return Blocks.REDSTONE_ORE.defaultBlockState();}
-            case DEEPSLATE -> {return Blocks.DEEPSLATE_REDSTONE_ORE.defaultBlockState();}
-            default -> {return Blocks.REDSTONE_ORE.defaultBlockState();}
-        }
+        return switch (replacementType) {
+            case STONE ->  Blocks.REDSTONE_ORE.defaultBlockState();
+            case DEEPSLATE ->  Blocks.DEEPSLATE_REDSTONE_ORE.defaultBlockState();
+            case ANDERSITE -> ModBlocks.REDSTONE_ANDERSITE_ORE.get().defaultBlockState();
+            case GRANITE -> ModBlocks.REDSTONE_GRANITE_ORE.get().defaultBlockState();
+            case DIORITE -> ModBlocks.REDSTONE_DIORITE_ORE.get().defaultBlockState();
+        };
     }
 
     public enum ReplacementType{
         DEEPSLATE,
-        STONE
+        STONE,
+        DIORITE,
+        GRANITE,
+        ANDERSITE
     }
 
     public static class ReplacementPos extends BlockPos {

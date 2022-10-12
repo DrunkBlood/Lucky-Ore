@@ -26,6 +26,30 @@ public class ModBlockStateProvider extends BlockStateProvider {
         addBasicBlockWithItemModels(ModBlocks.LUCKY_ORE);
         addBasicBlockWithItemModels(ModBlocks.LUCKY_REDSTONE_ORE);
         addBasicBlockWithItemModels(ModBlocks.NETHER_LUCKY_ORE);
+        addBasicBlockWithItemModels(ModBlocks.LUCKY_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.LUCKY_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.LUCKY_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.COAL_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.COAL_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.COAL_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.IRON_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.IRON_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.IRON_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.DIAMOND_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.DIAMOND_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.DIAMOND_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.LAPIS_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.LAPIS_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.LAPIS_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.COPPER_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.COPPER_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.COPPER_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.GOLD_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.GOLD_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.GOLD_GRANITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.REDSTONE_ANDERSITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.REDSTONE_DIORITE_ORE);
+        addBasicBlockWithItemModels(ModBlocks.REDSTONE_GRANITE_ORE);
     }
 
     private void addBasicBlockWithItemModels(Supplier<? extends Block> block){

@@ -31,6 +31,28 @@ public class ModGermanLanguageProvider extends LanguageProvider {
         addBlock(ModBlocks.LUCKY_GOLD_ORE, "Glücks-Golderz");
         addBlock(ModBlocks.LUCKY_EMERALD_ORE, "Glücks-Smaragerz");
 
+        addBlock(ModBlocks.LUCKY_ANDERSITE_ORE, "Glücksandersiterz");
+        addBlock(ModBlocks.LUCKY_GRANITE_ORE, "Glücksgraniterz");
+        addBlock(ModBlocks.LUCKY_DIORITE_ORE, "Glücksdioriterz");
+        addBlock(ModBlocks.DIAMOND_ANDERSITE_ORE, "Diamantandersiterz");
+        addBlock(ModBlocks.DIAMOND_DIORITE_ORE, "Diamantdioriterz");
+        addBlock(ModBlocks.DIAMOND_GRANITE_ORE, "Diamantgraniterz");
+        addBlock(ModBlocks.REDSTONE_ANDERSITE_ORE, "Redstoneandersiterz");
+        addBlock(ModBlocks.REDSTONE_DIORITE_ORE, "Redstonedioriterz");
+        addBlock(ModBlocks.REDSTONE_GRANITE_ORE, "Redstonegraniterz");
+        addBlock(ModBlocks.LAPIS_ANDERSITE_ORE, "Lapislazuliandersiterz");
+        addBlock(ModBlocks.LAPIS_DIORITE_ORE, "Lapislazulidioriterz");
+        addBlock(ModBlocks.LAPIS_GRANITE_ORE, "Lapislazuligraniterz");
+        addBlock(ModBlocks.IRON_ANDERSITE_ORE, "Eisenandersiterz");
+        addBlock(ModBlocks.IRON_DIORITE_ORE, "Eisendioriterz");
+        addBlock(ModBlocks.IRON_GRANITE_ORE, "Eisengraniterz");
+        addBlock(ModBlocks.COPPER_GRANITE_ORE, "Kupfergraniterz");
+        addBlock(ModBlocks.COPPER_DIORITE_ORE, "Kupferdioriterz");
+        addBlock(ModBlocks.COPPER_ANDERSITE_ORE, "Kufperandersiterz");
+        addBlock(ModBlocks.GOLD_ANDERSITE_ORE, "Goldandersiterz");
+        addBlock(ModBlocks.GOLD_DIORITE_ORE, "Golddioriterz");
+        addBlock(ModBlocks.GOLD_GRANITE_ORE, "Goldgraniterz");
+
         // Enchantments
         addEnchantment(ModEnchantments.LUCKY, "Glück");
 
