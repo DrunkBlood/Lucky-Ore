@@ -4,6 +4,9 @@ package drunkblood.luckyore;
 import drunkblood.luckyore.config.ConfigHolder;
 import drunkblood.luckyore.crafting.condition.ConfigEnableCondition;
 import drunkblood.luckyore.registries.*;
+import drunkblood.luckyore.util.OreBlockPicker;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -21,6 +24,7 @@ public class LuckyOre {
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
 	
 	public LuckyOre() {
+		BlockPos.MutableBlockPos testBlock = new BlockPos.MutableBlockPos();
 		final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		final ModLoadingContext modLoadingContext = ModLoadingContext.get();
 
