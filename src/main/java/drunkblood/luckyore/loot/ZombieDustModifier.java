@@ -2,7 +2,7 @@ package drunkblood.luckyore.loot;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import drunkblood.luckyore.config.LuckyOreConfig;
+import drunkblood.luckyore.util.LuckyOreConstants;
 import drunkblood.luckyore.registries.ModItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.entity.Entity;
@@ -42,8 +42,8 @@ public class ZombieDustModifier extends LootModifier {
 		Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
 		if (entity instanceof Zombie) {
 			int i = context.getLootingModifier();
-			if (context.getRandom().nextFloat() < LuckyOreConfig.zombie_dust_drop_chance
-					+ (float) i * LuckyOreConfig.zombie_dust_looting_multiplier) {
+			if (context.getRandom().nextFloat() < LuckyOreConstants.zombie_dust_drop_chance
+					+ (float) i * LuckyOreConstants.zombie_dust_looting_multiplier) {
 				generatedLoot.add(new ItemStack(ModItems.LUCKY_DUST.get(), 1));
 			}
 		}

@@ -2,7 +2,6 @@ package drunkblood.luckyore.block;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Random;
 
 import drunkblood.luckyore.registries.ModEnchantments;
 import net.minecraft.core.BlockPos;
@@ -29,7 +28,7 @@ public class BlockNetherLuckyOre extends Block {
 		super.playerWillDestroy(level, pos, state, player);
 		if(!level.isClientSide()) {
 			RandomSource random = level.random;
-			ArrayList<BlockPos> netherrackNearby = new ArrayList<BlockPos>();
+			ArrayList<BlockPos> netherrackNearby = new ArrayList<>();
 			
 			for(int z = -1; z<2;z++) {
 				for(int y = -1; y<2;y++) {

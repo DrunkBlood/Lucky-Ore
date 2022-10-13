@@ -2,7 +2,7 @@ package drunkblood.luckyore.registries;
 
 import com.google.common.collect.ImmutableList;
 import drunkblood.luckyore.LuckyOre;
-import drunkblood.luckyore.config.LuckyOreConfig;
+import drunkblood.luckyore.util.LuckyOreConstants;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
@@ -133,7 +133,7 @@ public class ModOres {
 			);
 			OreConfiguration luckyOreConfiguration = new OreConfiguration(
 					luckyOreTargets,
-					LuckyOreConfig.lucky_ore_air_discard
+					LuckyOreConstants.lucky_ore_air_discard
 			);
 			return new ConfiguredFeature<>(Feature.ORE, luckyOreConfiguration);
 		});
@@ -144,7 +144,7 @@ public class ModOres {
 			OreConfiguration netherLuckyOreConfiguration = new OreConfiguration(
 					OreFeatures.NETHERRACK,
 					ModBlocks.NETHER_LUCKY_ORE.get().defaultBlockState(),
-					LuckyOreConfig.nether_lucky_ore_air_discard
+					LuckyOreConstants.nether_lucky_ore_air_discard
 			);
 			return new ConfiguredFeature<>(Feature.ORE, netherLuckyOreConfiguration);
 		});
@@ -154,22 +154,22 @@ public class ModOres {
 
 	public static List<PlacementModifier> luckyOrePlacements(){
 		return ImmutableList.of(
-				CountPlacement.of(LuckyOreConfig.lucky_ore_vein_count),
+				CountPlacement.of(LuckyOreConstants.lucky_ore_vein_size),
 				InSquarePlacement.spread(),
 				HeightRangePlacement.uniform(
-						VerticalAnchor.absolute(LuckyOreConfig.lucky_ore_above_low),
-						VerticalAnchor.absolute(LuckyOreConfig.lucky_ore_below_high)
+						VerticalAnchor.absolute(LuckyOreConstants.lucky_ore_above_low),
+						VerticalAnchor.absolute(LuckyOreConstants.lucky_ore_below_high)
 				),
 				BiomeFilter.biome());
 	}
 
 	public static List<PlacementModifier> netherLuckyOrePlacements(){
 		return ImmutableList.of(
-				CountPlacement.of(LuckyOreConfig.nether_lucky_ore_vein_count),
+				CountPlacement.of(LuckyOreConstants.nether_lucky_ore_vein_size),
 				InSquarePlacement.spread(),
 				HeightRangePlacement.uniform(
-						VerticalAnchor.absolute(LuckyOreConfig.nether_lucky_ore_above_low),
-						VerticalAnchor.absolute(LuckyOreConfig.nether_lucky_ore_below_high)
+						VerticalAnchor.absolute(LuckyOreConstants.nether_lucky_ore_above_low),
+						VerticalAnchor.absolute(LuckyOreConstants.nether_lucky_ore_below_high)
 				),
 				BiomeFilter.biome());
 	}

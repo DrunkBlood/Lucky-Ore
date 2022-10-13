@@ -3,7 +3,7 @@ package drunkblood.luckyore.loot;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import drunkblood.luckyore.config.LuckyOreConfig;
+import drunkblood.luckyore.util.LuckyOreConstants;
 import drunkblood.luckyore.registries.ModBlocks;
 import drunkblood.luckyore.registries.ModGlobalLootModifiers;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -35,24 +35,24 @@ public class LuckyBonusModifier extends LootModifier {
 	protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
 		ItemStack tool = context.getParam(LootContextParams.TOOL);
 		RandomSource random = context.getRandom();
-		int increasedDrops = LuckyOreConfig.general_increased_drops;
+		int increasedDrops = LuckyOreConstants.general_increased_drops;
 		if (tool != null) {
 			BlockState state = context.getParam(LootContextParams.BLOCK_STATE);
 			if (state != null) {
 				if (ModBlocks.LUCKY_EMERALD_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_emerald_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_emerald_ore_increased_drops;
 				} else if (ModBlocks.LUCKY_LAPIS_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_lapis_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_lapis_ore_increased_drops;
 				} else if (ModBlocks.LUCKY_LAPIS_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_redstone_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_redstone_ore_increased_drops;
 				} else if (ModBlocks.LUCKY_DIAMOND_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_diamond_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_diamond_ore_increased_drops;
 				} else if (ModBlocks.LUCKY_IRON_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_iron_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_iron_ore_increased_drops;
 				} else if (ModBlocks.LUCKY_COPPER_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_copper_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_copper_ore_increased_drops;
 				} else if (ModBlocks.LUCKY_GOLD_ORE.get().defaultBlockState().equals(state)) {
-					increasedDrops += LuckyOreConfig.lucky_gold_ore_increased_drops;
+					increasedDrops += LuckyOreConstants.lucky_gold_ore_increased_drops;
 				}
 			}
 			for (ItemStack stack : generatedLoot) {

@@ -1,12 +1,7 @@
 package drunkblood.luckyore;
 
 
-import drunkblood.luckyore.config.ConfigHolder;
-import drunkblood.luckyore.crafting.condition.ConfigEnableCondition;
 import drunkblood.luckyore.registries.*;
-import drunkblood.luckyore.util.OreBlockPicker;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.RandomSource;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -34,15 +29,6 @@ public class LuckyOre {
 		ModGlobalLootModifiers.REG.register(modBus);
 		ModOres.REG_CONFIG.register(modBus);
 		ModOres.REG_PLACED.register(modBus);
-
-		// Config
-		modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
-		// TODO enable when doing Server Config
-		// modLoadingContext.registerConfig(ModConfig.Type.SERVER,
-		// ConfigHolder.SERVER_SPEC);
-
-		// Crafting
-		CraftingHelper.register(new ConfigEnableCondition.Serializer());
 
 	}
 

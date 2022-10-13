@@ -39,7 +39,7 @@ public class ModLanguageProvider extends LanguageProvider {
         addBlock(ModBlocks.LAPIS_DIORITE_ORE, "Lapis Lazuli Diorite Ore");
         addBlock(ModBlocks.LAPIS_GRANITE_ORE, "Lapis Lazuli Granite Ore");
         addBlock(ModBlocks.LUCKY_IRON_ORE, "Lucky Iron Ore");
-        addBlock(ModBlocks.IRON_ANDERSITE_ORE, "Lucky Iron Ore");
+        addBlock(ModBlocks.IRON_ANDERSITE_ORE, "Lucky Andersite Ore");
         addBlock(ModBlocks.IRON_DIORITE_ORE, "Iron Diorite Ore");
         addBlock(ModBlocks.IRON_GRANITE_ORE, "Iron Granite Ore");
         addBlock(ModBlocks.LUCKY_COPPER_ORE, "Lucky Copper Ore");
@@ -51,6 +51,9 @@ public class ModLanguageProvider extends LanguageProvider {
         addBlock(ModBlocks.GOLD_DIORITE_ORE, "Gold Diorite Ore");
         addBlock(ModBlocks.GOLD_GRANITE_ORE, "Gold Granite Ore");
         addBlock(ModBlocks.LUCKY_EMERALD_ORE, "Lucky Emerald Ore");
+        addBlock(ModBlocks.COAL_ANDERSITE_ORE, "Coal Andersite Ore");
+        addBlock(ModBlocks.COAL_DIORITE_ORE, "Coal Diorite Ore");
+        addBlock(ModBlocks.COAL_GRANITE_ORE, "Coal Granite Ore");
 
         // Enchantments
         addEnchantment(ModEnchantments.LUCKY, "Lucky");

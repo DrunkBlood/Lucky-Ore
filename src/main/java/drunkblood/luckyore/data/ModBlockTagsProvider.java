@@ -11,7 +11,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
 
@@ -50,9 +49,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.LUCKY_GRANITE_ORE,
                 ModBlocks.LUCKY_DIORITE_ORE,
                 ModBlocks.DEEPSLATE_LUCKY_ORE,
+                ModBlocks.LAPIS_DIORITE_ORE,
+                ModBlocks.LAPIS_GRANITE_ORE,
+                ModBlocks.LAPIS_ANDERSITE_ORE,
+                ModBlocks.LUCKY_LAPIS_ORE,
                 ModBlocks.LUCKY_ORE);
         addTagsByProvider(BlockTags.MINEABLE_WITH_PICKAXE,
                 ModBlocks.LUCKY_IRON_ORE,
+                ModBlocks.LUCKY_LAPIS_ORE,
                 ModBlocks.IRON_ANDERSITE_ORE,
                 ModBlocks.IRON_DIORITE_ORE,
                 ModBlocks.IRON_GRANITE_ORE,
@@ -78,6 +82,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.LUCKY_GOLD_ORE,
                 ModBlocks.GOLD_ANDERSITE_ORE,
                 ModBlocks.GOLD_DIORITE_ORE,
+                ModBlocks.COAL_GRANITE_ORE,
+                ModBlocks.COAL_ANDERSITE_ORE,
+                ModBlocks.LAPIS_DIORITE_ORE,
+                ModBlocks.LAPIS_GRANITE_ORE,
+                ModBlocks.LAPIS_ANDERSITE_ORE,
+                ModBlocks.COAL_DIORITE_ORE,
                 ModBlocks.GOLD_GRANITE_ORE);
     }
 

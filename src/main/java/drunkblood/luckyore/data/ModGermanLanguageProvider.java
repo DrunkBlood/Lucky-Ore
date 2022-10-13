@@ -52,6 +52,9 @@ public class ModGermanLanguageProvider extends LanguageProvider {
         addBlock(ModBlocks.GOLD_ANDERSITE_ORE, "Goldandersiterz");
         addBlock(ModBlocks.GOLD_DIORITE_ORE, "Golddioriterz");
         addBlock(ModBlocks.GOLD_GRANITE_ORE, "Goldgraniterz");
+        addBlock(ModBlocks.COAL_ANDERSITE_ORE, "Andersitkohle");
+        addBlock(ModBlocks.COAL_DIORITE_ORE, "Dioritkohle");
+        addBlock(ModBlocks.COAL_GRANITE_ORE, "Granitkohle");
 
         // Enchantments
         addEnchantment(ModEnchantments.LUCKY, "Glück");

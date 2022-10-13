@@ -3,7 +3,6 @@ package drunkblood.luckyore.block;
 import drunkblood.luckyore.registries.ModEnchantments;
 import drunkblood.luckyore.util.OreBlockPicker;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Random;
 
 
 public class BlockLuckyOre extends Block {
