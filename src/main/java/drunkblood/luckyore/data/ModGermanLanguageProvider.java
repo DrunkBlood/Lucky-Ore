@@ -21,7 +21,7 @@ public class ModGermanLanguageProvider extends LanguageProvider {
 
         // Blocks
         addBlock(ModBlocks.LUCKY_ORE, "Glückserz");
-        addBlock(ModBlocks.DEEPSLATE_LUCKY_ORE, "Tiefenschiefer-Glückserz");
+//        addBlock(ModBlocks.DEEPSLATE_LUCKY_ORE, "Tiefenschiefer-Glückserz");
         addBlock(ModBlocks.NETHER_LUCKY_ORE, "Nether-Glückserz");
         addBlock(ModBlocks.LUCKY_DIAMOND_ORE, "Glücks-Diamanterz");
         addBlock(ModBlocks.LUCKY_REDSTONE_ORE, "Glücks-Redstone-Erz");

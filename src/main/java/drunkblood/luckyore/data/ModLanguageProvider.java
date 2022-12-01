@@ -24,7 +24,7 @@ public class ModLanguageProvider extends LanguageProvider {
         addBlock(ModBlocks.LUCKY_ANDERSITE_ORE, "Lucky Andersite Ore");
         addBlock(ModBlocks.LUCKY_GRANITE_ORE, "Lucky Granite Ore");
         addBlock(ModBlocks.LUCKY_DIORITE_ORE, "Lucky Diorite Ore");
-        addBlock(ModBlocks.DEEPSLATE_LUCKY_ORE, "Deepslate Lucky Ore");
+//        addBlock(ModBlocks.DEEPSLATE_LUCKY_ORE, "Deepslate Lucky Ore");
         addBlock(ModBlocks.NETHER_LUCKY_ORE, "Nether Lucky Ore");
         addBlock(ModBlocks.LUCKY_DIAMOND_ORE, "Lucky Diamond Ore");
         addBlock(ModBlocks.DIAMOND_ANDERSITE_ORE, "Diamond Andersite Ore");

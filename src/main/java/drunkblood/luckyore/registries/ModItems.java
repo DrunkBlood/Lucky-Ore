@@ -16,8 +16,8 @@ public class ModItems {
 	// BLOCK_ITEMS
 	public static final RegistryObject<Item> LUCKY_ORE = REG.register("lucky_ore",
 			() -> new BlockItem(ModBlocks.LUCKY_ORE.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-	public static final RegistryObject<Item> DEEPSLATE_LUCKY_ORE = REG.register("deepslate_lucky_ore",
-			() -> new BlockItem(ModBlocks.DEEPSLATE_LUCKY_ORE.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+//	public static final RegistryObject<Item> DEEPSLATE_LUCKY_ORE = REG.register("deepslate_lucky_ore",
+//			() -> new BlockItem(ModBlocks.DEEPSLATE_LUCKY_ORE.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 	public static final RegistryObject<Item> LUCKY_DIORITE_ORE = REG.register("lucky_diorite_ore",
 		() -> new BlockItem(ModBlocks.LUCKY_DIORITE_ORE.get(),
 			new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));

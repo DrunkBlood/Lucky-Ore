@@ -14,13 +14,22 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 
 public class BlockNetherLuckyOre extends Block {
 
+	public static final EnumProperty<OreType> ORE_TYPE = ModBlockProperties.ORE_TYPE;
 
 	public BlockNetherLuckyOre(Properties properties) {
 		super(properties);
+		this.registerDefaultState(this.stateDefinition.any().setValue(ORE_TYPE, OreType.STONE));
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(ORE_TYPE);
 	}
 
 	@Override

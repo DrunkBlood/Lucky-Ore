@@ -16,7 +16,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        addBasicBlockWithItemModels(ModBlocks.DEEPSLATE_LUCKY_ORE);
+//        addBasicBlockWithItemModels(ModBlocks.DEEPSLATE_LUCKY_ORE);
         addBasicBlockWithItemModels(ModBlocks.LUCKY_COPPER_ORE);
         addBasicBlockWithItemModels(ModBlocks.LUCKY_DIAMOND_ORE);
         addBasicBlockWithItemModels(ModBlocks.LUCKY_EMERALD_ORE);

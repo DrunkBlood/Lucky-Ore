@@ -15,6 +15,13 @@ plugins {
 }
 apply plugin: 'net.minecraftforge.gradle'
 
+tasks.register("genModData") {
+    finalizedBy("runData")
+    copy {
+        from("mask")
+        into("run/mask")
+    }
+}
 
 version = '1.1.0-1.19.2'
 group = 'luckyore' // http://maven.apache.org/guides/mini/guide-naming-conventions.html

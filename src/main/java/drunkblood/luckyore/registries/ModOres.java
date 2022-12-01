@@ -126,7 +126,7 @@ public class ModOres {
 		LUCKY_ORE_FEATURE = REG_CONFIG.register("configured_ore_lucky_ore", () -> {
 			List<OreConfiguration.TargetBlockState> luckyOreTargets = ImmutableList.of(
 					OreConfiguration.target(STONE_ORE_REPLACEABLES, ModBlocks.LUCKY_ORE.get().defaultBlockState()),
-					OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_LUCKY_ORE.get().defaultBlockState()),
+//					OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_LUCKY_ORE.get().defaultBlockState()),
 					OreConfiguration.target(new BlockMatchTest(Blocks.DIORITE), ModBlocks.LUCKY_DIORITE_ORE.get().defaultBlockState()),
 					OreConfiguration.target(new BlockMatchTest(Blocks.GRANITE), ModBlocks.LUCKY_GRANITE_ORE.get().defaultBlockState()),
 					OreConfiguration.target(new BlockMatchTest(Blocks.ANDESITE), ModBlocks.LUCKY_ANDERSITE_ORE.get().defaultBlockState())

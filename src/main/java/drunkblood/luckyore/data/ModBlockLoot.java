@@ -16,7 +16,7 @@ public class ModBlockLoot extends BlockLoot {
     @Override
     protected void addTables() {
         this.add(ModBlocks.LUCKY_ORE.get(), (p_124187_) -> createSingleItemTableWithSilkTouch(p_124187_, ModItems.LUCKY_DUST.get()));
-        this.add(ModBlocks.DEEPSLATE_LUCKY_ORE.get(), (p_124187_) -> createSingleItemTableWithSilkTouch(p_124187_, ModItems.LUCKY_DUST.get()));
+//        this.add(ModBlocks.DEEPSLATE_LUCKY_ORE.get(), (p_124187_) -> createSingleItemTableWithSilkTouch(p_124187_, ModItems.LUCKY_DUST.get()));
         this.add(ModBlocks.LUCKY_ANDERSITE_ORE.get(), (p_124187_) -> createSingleItemTableWithSilkTouch(p_124187_, ModItems.LUCKY_DUST.get()));
         this.add(ModBlocks.LUCKY_DIORITE_ORE.get(), (p_124187_) -> createSingleItemTableWithSilkTouch(p_124187_, ModItems.LUCKY_DUST.get()));
         this.add(ModBlocks.LUCKY_GRANITE_ORE.get(), (p_124187_) -> createSingleItemTableWithSilkTouch(p_124187_, ModItems.LUCKY_DUST.get()));

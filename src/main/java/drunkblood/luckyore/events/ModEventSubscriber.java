@@ -45,21 +45,22 @@ public class ModEventSubscriber {
 	public static void GatherData(GatherDataEvent event){
 		DataGenerator generator = event.getGenerator();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-		generator.addProvider(event.includeClient(), new ModItemModelProvider(generator, LuckyOre.MODID, existingFileHelper));
-		generator.addProvider(event.includeClient(), new ModBlockStateProvider(generator, LuckyOre.MODID, existingFileHelper));
-		generator.addProvider(event.includeServer(), new ModBlockTagsProvider(generator, LuckyOre.MODID, existingFileHelper));
-		generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
-		generator.addProvider(event.includeServer(), new ModLanguageProvider(generator, LuckyOre.MODID));
-		generator.addProvider(event.includeServer(), new ModGermanLanguageProvider(generator, LuckyOre.MODID));
-		generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
+//		generator.addProvider(event.includeClient(), new ModItemModelProvider(generator, LuckyOre.MODID, existingFileHelper));
+//		generator.addProvider(event.includeClient(), new ModBlockStateProvider(generator, LuckyOre.MODID, existingFileHelper));
+//		generator.addProvider(event.includeServer(), new ModBlockTagsProvider(generator, LuckyOre.MODID, existingFileHelper));
+//		generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
+//		generator.addProvider(event.includeServer(), new ModLanguageProvider(generator, LuckyOre.MODID));
+//		generator.addProvider(event.includeServer(), new ModGermanLanguageProvider(generator, LuckyOre.MODID));
+//		generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
+		generator.addProvider(event.includeServer(), new ModTextureProvider(generator));
 
-		// features
-		RegistryAccess.Writable registryAccess = RegistryAccess.builtinCopy();
-		RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
-
-		configuredFeatures(event.includeServer(), generator, existingFileHelper, registryOps);
-		placedFeatures(event.includeServer(), generator, existingFileHelper, registryAccess, registryOps);
-		biomeModifiers(event.includeServer(), generator, existingFileHelper, registryOps);
+//		// features
+//		RegistryAccess.Writable registryAccess = RegistryAccess.builtinCopy();
+//		RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
+//
+//		configuredFeatures(event.includeServer(), generator, existingFileHelper, registryOps);
+//		placedFeatures(event.includeServer(), generator, existingFileHelper, registryAccess, registryOps);
+//		biomeModifiers(event.includeServer(), generator, existingFileHelper, registryOps);
 
 	}
 
